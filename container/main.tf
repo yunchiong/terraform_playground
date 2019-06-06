@@ -1,10 +1,5 @@
 #---------------container/main.tf---------------
 
-# Setup Docker Provider
-provider "docker" {
-  host = "tcp://127.0.0.1:2375/"
-}
-
 # Start a container
 resource "docker_container" "container_id" {
   name = "${lookup(var.name, var.env)}"
